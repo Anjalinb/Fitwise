@@ -1,0 +1,83 @@
+#API call for registering a user
+###
+POST http://127.0.0.1:8000/v1/food/signup/
+Content-Type: application/json
+
+{
+    "username":"react",
+    "password":"react123",
+    "email":"react@gmail.com"
+}
+
+#API call for getting a token
+###
+POST http://127.0.0.1:8000/v1/food/token/
+Content-Type: application/json
+
+{
+    "username":"django",
+    "password":"django123"
+}
+
+#API call for getting details of the user sending request
+###
+GET http://127.0.0.1:8000/v1/food/getme/
+Accept: application/json
+Authorization: Token 9a164742dcdd4b224ef80de8a0f32f3c49b94c0c
+
+#FOOD LOG END POINTS
+#API call for listing all food logs of the user sending the request
+###
+GET http://127.0.0.1:8000/v1/food/foodlog/
+Accept: application/json
+Authorization: Token 9a164742dcdd4b224ef80de8a0f32f3c49b94c0c
+
+#API call for adding a food log
+###
+POST http://127.0.0.1:8000/v1/food/foodlog/
+Content-Type: application/json
+Authorization: Token 9a164742dcdd4b224ef80de8a0f32f3c49b94c0c
+
+{
+    "title": "chocolate chip cookies",
+    "calories": 150,
+    "meal_type": "snacks",
+    "serving_size": "2 pieces"
+}
+
+#API call for retrieving a food log
+###
+GET http://127.0.0.1:8000/v1/food/foodlog/1/
+Accept: application/json
+Authorization: Token 04a44290b81746ffed27745fb9d4f926ab70cc24
+
+#API call for updating a food log
+###
+PUT http://127.0.0.1:8000/v1/food/foodlog/1/
+Content-Type: application/json
+Authorization: Token 04a44290b81746ffed27745fb9d4f926ab70cc24
+
+{
+    "title":"bread",
+    "calories":60,
+    "meal_type":"snacks",
+    "serving_size":"2 slices"
+}
+
+#API call for deleting a food log
+###
+DELETE  http://127.0.0.1:8000/v1/food/foodlog/3/
+Accept: application/json
+Authorization: Token 04a44290b81746ffed27745fb9d4f926ab70cc24
+
+#API call for calorie summary
+###
+GET http://127.0.0.1:8000/v1/food/foodlog/summary/
+Accept: application/json
+Authorization: Token 9a164742dcdd4b224ef80de8a0f32f3c49b94c0c
+
+#API call for dietplan
+###
+GET http://127.0.0.1:8000/v1/food/foodlog/dietplan/
+Accept: application/json
+Authorization: Token 9a164742dcdd4b224ef80de8a0f32f3c49b94c0c
